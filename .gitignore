@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+gpt-sample
 
 # Spyder project settings
 .spyderproject
