@@ -23,7 +23,7 @@ Pythonでの実装方法をいくつか紹介します。
 
 事前にPythonはインストールされているものとします。
 
-Pythonの基礎知識はSolxyz Academy「Python言語基礎」で学ぶことができます。
+Pythonの基礎知識はSOLXYZ Academy「Python言語基礎」で学ぶことができます。
 
 または[公式ドキュメント](https://docs.python.org/ja/3/)で学習してください。
 
