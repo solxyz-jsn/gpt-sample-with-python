@@ -38,15 +38,15 @@ service_context = ServiceContext.from_defaults(
     llm_predictor=LLMPredictor(llm=ChatOpenAI(model_name="gpt-3.5-turbo"))
 )
 
-# 実行ファイルのパス
-dir_path = os.path.dirname(os.path.realpath(__file__))
+# # 実行ファイルのパス
+# dir_path = os.path.dirname(os.path.realpath(__file__))
 
-# 外部データの読み込み（＊初回のみ実行）
-documents = SimpleDirectoryReader(os.path.join(dir_path, "data")).load_data()
-# インデックスの作成（＊初回のみ実行）
-index = GPTVectorStoreIndex.from_documents(documents, service_context=service_context)
-# インデックスの保存（＊初回のみ実行）
-index.storage_context.persist()
+# # 外部データの読み込み（＊初回のみ実行）
+# documents = SimpleDirectoryReader(os.path.join(dir_path, "data")).load_data()
+# # インデックスの作成（＊初回のみ実行）
+# index = GPTVectorStoreIndex.from_documents(documents, service_context=service_context)
+# # インデックスの保存（＊初回のみ実行）
+# index.storage_context.persist()
 
 # 保存済みのデータの読み込み
 storage_context = StorageContext.from_defaults(persist_dir="./storage")
@@ -64,7 +64,7 @@ prompt = st.text_input("質問を入力してください。")
 if prompt:
     try:
         response = query_engine.query(
-            f"あなたは広報です。簡潔な日本語で答えてください。また文章に記載のない場合はその旨を教えてください。 {prompt}"
+            f"あなたは広報です。簡潔な日本語で答えてください。また文章に記載のない場合はその旨を教えてください。 ```{prompt}```"
         )
     except Exception as e:
         print("error")
